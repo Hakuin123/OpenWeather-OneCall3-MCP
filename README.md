@@ -51,7 +51,7 @@ Once published to NPM, users can run the server without manually downloading cod
       "command": "npx",
       "args": [
         "-y",
-        "openweather-mcp"
+        "openweather-one-call-3.0-mcp"
       ],
       "env": {
         "OPENWEATHER_API_KEY": "your_api_key_here"
