@@ -7,14 +7,14 @@ const serverPath = path.resolve("./dist/index.js");
 const env = { ...process.env, OPENWEATHER_API_KEY: "test_key_verification" };
 
 console.log("Starting server from:", serverPath);
-const server = spawn("node", [serverPath], { env, stdio: ["pipe", "pipe", "inherit"] });
+const server = spawn("node", [serverPath], { env, stdio: ["pipe", "pipe", "pipe"] });
 
 const sendRequest = (req: any) => {
     const json = JSON.stringify(req);
     server.stdin.write(json + "\n");
 };
 
-server.stdout.on("data", (data) => {
+server.stdout.on("data", (data: any) => {
     const lines = data.toString().split("\n");
     for (const line of lines) {
         if (!line.trim()) continue;
@@ -56,7 +56,7 @@ server.stdout.on("data", (data) => {
     }
 });
 
-server.stderr.on("data", (data) => {
+server.stderr?.on("data", (data: any) => {
     console.error(`[Server Log] ${data}`);
 });
 
