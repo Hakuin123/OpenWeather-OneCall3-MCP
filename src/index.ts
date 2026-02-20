@@ -72,16 +72,16 @@ const GET_WEATHER_HISTORY_TOOL: Tool = {
 }
 
 const SEARCH_LOCATION_TOOL: Tool = {
-  name: 'search_location',
+  name: 'get_coordinates_from_location',
   description:
-    'Search for a location by name to get its coordinates (lat/lon).',
+    'Retrieve latitude and longitude for a given city or administrative area name. Use this when you need coordinates (lat/lon) for a place.',
   inputSchema: {
     type: 'object',
     properties: {
       query: {
         type: 'string',
         description:
-          "City name, state code (optional), country code (optional). E.g. 'London', 'New York, NY, US'",
+          "City or administrative area name, state code (optional), country code (optional). E.g. 'London', 'New York, NY, US'",
       },
       limit: {
         type: 'number',
@@ -132,7 +132,7 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
       }
     }
 
-    if (name === 'search_location') {
+    if (name === 'get_coordinates_from_location') {
       const schema = z.object({
         query: z.string(),
         limit: z.number().optional(),

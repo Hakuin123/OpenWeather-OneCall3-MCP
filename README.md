@@ -94,9 +94,9 @@ If running locally from source:
 
 - **参数 | Args**: `lat`（数字，纬度 | number），`lon`（数字，经度 | number），`dt`（Unix 时间戳 | unix timestamp）
 
-### `search_location`
+### `get_coordinates_from_location`
 
-搜索城市/地点以获取坐标。Search for a city/location to get coordinates.
+搜索城市或行政区域以获取坐标。Search for a city or administrative area to get coordinates.
 
 - **参数 | Args**: `query`（字符串，搜索查询 | string）
 
