@@ -21,12 +21,14 @@ A Model Context Protocol (MCP) server that provides weather data using the OpenW
 ### 选项 1: 从源码运行（推荐给开发者） | Option 1: Run from Source (Recommended for Developers)
 
 1.  **克隆此仓库 | Clone this repository**:
+
     ```bash
     git clone https://github.com/your-username/openweather-mcp.git
     cd openweather-mcp
     ```
 
 2.  **安装依赖 | Install dependencies**:
+
     ```bash
     npm install
     ```
@@ -49,10 +51,7 @@ Once published to NPM, users can run the server without manually downloading cod
   "mcpServers": {
     "openweather": {
       "command": "npx",
-      "args": [
-        "-y",
-        "openweather-one-call-3.0-mcp"
-      ],
+      "args": ["-y", "openweather-one-call-3.0-mcp"],
       "env": {
         "OPENWEATHER_API_KEY": "your_api_key_here"
       }
@@ -72,9 +71,7 @@ If running locally from source:
   "mcpServers": {
     "openweather": {
       "command": "node",
-      "args": [
-        "C:/Absolute/Path/To/openweather-mcp/dist/index.js"
-      ],
+      "args": ["C:/Absolute/Path/To/openweather-mcp/dist/index.js"],
       "env": {
         "OPENWEATHER_API_KEY": "your_api_key_here"
       }
@@ -86,15 +83,21 @@ If running locally from source:
 ## 工具 | Tools
 
 ### `get_current_weather`
+
 获取指定地点的当前天气和预报。Fetch current weather and forecast for a location.
+
 - **参数 | Args**: `lat`（数字，纬度 | number），`lon`（数字，经度 | number），`exclude`（数组，可选 | array, optional）
 
 ### `get_weather_history`
+
 获取特定时间的历史天气。Fetch historical weather for a specific time.
+
 - **参数 | Args**: `lat`（数字，纬度 | number），`lon`（数字，经度 | number），`dt`（Unix 时间戳 | unix timestamp）
 
 ### `search_location`
+
 搜索城市/地点以获取坐标。Search for a city/location to get coordinates.
+
 - **参数 | Args**: `query`（字符串，搜索查询 | string）
 
 ## 许可证 | License
